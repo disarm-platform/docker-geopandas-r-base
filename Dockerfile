@@ -8,14 +8,14 @@ RUN apt-get update -y && \
 
 # Install libspatialindex
 WORKDIR /tmp
-RUN wget http://download.osgeo.org/libspatialindex/spatialindex-src-1.9.0.tar.gz && \
-  tar -xvzf spatialindex-src-1.9.0.tar.gz && \
-  cd spatialindex-src-1.9.0 && \
+RUN wget http://download.osgeo.org/libspatialindex/spatialindex-src-1.8.5.tar.gz && \
+  tar -xvzf spatialindex-src-1.8.5.tar.gz && \
+  cd spatialindex-src-1.8.5 && \
   ./configure && \
   make && \
   make install && \
   cd - && \
-  rm -rf spatialindex-src-1.9.0* && \
+  rm -rf spatialindex-src-1.8.5* && \
   ldconfig
 
 # Install rtree and geopandas
