@@ -6,6 +6,8 @@ RUN apt-get update -y && \
   apt-get install build-essential -y && \
   pip install --upgrade pip
 
+RUN apt-get update && apt-get install -y r-base
+
 # Install libspatialindex
 WORKDIR /tmp
 RUN wget http://download.osgeo.org/libspatialindex/spatialindex-src-1.8.5.tar.gz && \
