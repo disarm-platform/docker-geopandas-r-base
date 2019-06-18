@@ -6,10 +6,14 @@ RUN apt-get update -y && \
   apt-get install build-essential -y && \
   pip install --upgrade pip
 
-RUN deb http://cran.rstudio.com/bin/linux/debian stretch-cran34/ && \
-        sudo apt install dirmngr && \
-        sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF' &&\
-        apt-get update && apt-get install -y r-base
+RUN sudo apt install dirmngr --install-recommends && \
+  sudo apt install software-properties-common && \
+  sudo apt install apt-transport-https && \
+  sudo apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF' && \
+  sudo add-apt-repository 'deb https://cloud.r-project.org/bin/linux/debian stretch-cran35/' && \
+  sudo apt update && \ 
+  sudo apt install r-base
+
 
 
 # Install libspatialindex
