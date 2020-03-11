@@ -15,5 +15,6 @@ RUN apt-get install -y dirmngr --install-recommends && \
   apt-get update -y && \ 
   apt-get install -y r-base libspatialindex5
 
-# Install rtree and geopandas
-RUN pip install rtree geopandas
+# Install common Python and R dependencies
+# RUN pip install rtree geopandas
+# RUN Rscript -e "install.packages(c('geojsonio', 'jsonlite', 'devtools', 'ranger', 'mgcv', 'RANN', 'httr', 'caret', 'parallel', 'spaMM', 'rjson'))"
