@@ -11,7 +11,7 @@ RUN apt-get install -y dirmngr --install-recommends && \
   apt-get install -y software-properties-common && \
   apt-get install -y apt-transport-https && \
   apt-key adv --keyserver keys.gnupg.net --recv-key 'E19F5F87128899B192B1A2C2AD5F960A256A04AF' && \
-  add-apt-repository 'deb https://cloud.r-project.org/bin/linux/debian stretch-cran35/' && \
+  add-apt-repository 'deb https://cloud.r-project.org/bin/linux/debian buster-cran35/' && \
   apt-get update -y && \ 
   apt-get install -y r-base
 
