@@ -15,7 +15,12 @@ RUN apt-get install -y dirmngr --install-recommends && \
   apt-get update -y && \ 
   apt-get install -y r-base libspatialindex-c5
 
-# Install common Python and R dependencies
+# Install common Python
 RUN pip install rtree geopandas
 RUN Rscript -e "install.packages(c('pacman'))"
-# RUN Rscript -e "install.packages(c('geojsonio', 'jsonlite', 'rjson', 'devtools', 'ranger', 'RANN', 'httr', 'caret', 'spaMM'))"
+
+# And now, R...
+# Deps for geojsonio
+RUN apt install libudunits2-dev libprotobuf-dev libjq-devlibv8-dev
+# RUN Rscript -e "pacman::p_load(char = c('geojsonio', 'jsonlite', 'rjson', 'devtools', 'ranger', 'RANN', 'httr', 'caret'))"
+RUN Rscript -e "pacman::p_load(char = c('geojsonio'))"
