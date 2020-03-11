@@ -17,7 +17,7 @@ RUN apt-get install -y dirmngr --install-recommends && \
 
 # Install libspatialindex
 WORKDIR /tmp
-RUN wget http://download.osgeo.org/libspatialindex/spatialindex-src-1.9.3.tar.gz && \
+RUN wget https://github.com/libspatialindex/libspatialindex/releases/download/1.9.3/spatialindex-src-1.9.3.tar.gz && \
   tar -xvzf spatialindex-src-1.9.3.tar.gz && \
   cd spatialindex-src-1.9.3 && \
   ./configure && \
