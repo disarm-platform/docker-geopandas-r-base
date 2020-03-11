@@ -17,4 +17,4 @@ RUN apt-get install -y dirmngr --install-recommends && \
 
 # Install common Python and R dependencies
 RUN pip install rtree geopandas
-RUN Rscript -e "install.packages(c('geojsonio', 'jsonlite', 'devtools', 'ranger', 'mgcv', 'RANN', 'httr', 'caret', 'parallel', 'spaMM', 'rjson'))"
+# RUN Rscript -e "install.packages(c('geojsonio', 'jsonlite', 'rjson', 'devtools', 'ranger', 'RANN', 'httr', 'caret', 'spaMM'))"
