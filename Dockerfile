@@ -22,5 +22,4 @@ RUN Rscript -e "install.packages(c('pacman'))"
 # And now, R...
 # Deps for geojsonio
 RUN apt-get install -y libudunits2-dev libprotobuf-dev libjq-dev libv8-dev protobuf-compiler libgeos-dev libgdal-dev
-RUN Rscript -e "pacman::p_load(char = c('geojsonio', 'jsonlite', 'rjson', 'ranger', 'RANN', 'caret'))"
-# RUN Rscript -e "pacman::p_load(char = c('geojsonio', 'jsonlite', 'rjson', 'devtools', 'ranger', 'RANN', 'httr', 'caret'))"
+RUN Rscript -e "pacman::p_load(char = c('geojsonio', 'jsonlite', 'rjson', 'ranger', 'RANN', 'caret', 'devtools'))"
